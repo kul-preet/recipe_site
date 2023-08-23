@@ -23,7 +23,6 @@ html{
 } */
 
 
-
 section{
     min-height: 100vh;
     width:100%;
@@ -43,22 +42,36 @@ section{
     margin: auto;
 }
 
+
+
+
 .brand{
     text-align:center;
     font-size: 4rem;
     color: aliceblue;
     margin-bottom:30px;
+    
+    /* animation: bounce 0.5s ease alternate-reverse; */
+    /* transition: transform 3s; */
 }
 
 form{
     width: 90%;
     max-width: 400px;
     margin: 20px auto;
-    background-color:azure;
+    background-color:rgb(217, 235, 235);
     border-radius: 60px;
-
+    transition: transform 0.5s;
+    box-shadow: 0 0 0 rgba(219, 8, 8, 0.2);
     
 }
+
+form:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgb(237, 246, 116);
+    /* animation: bounce 0.5s ease infinite; */
+}
+
 
 form input{
     width: 90%;
@@ -86,7 +99,7 @@ form ion-icon{
     width: 100%;
     display: grid;
     grid-gap:26px;
-     grid-template:auto/ repeat(auto-fit,minmax(300px,1fr)); 
+    grid-template:auto/ repeat(auto-fit,minmax(300px,1fr)); 
 
 
 }
@@ -97,7 +110,13 @@ form ion-icon{
     background-color: black;
     padding: 15px;
     overflow: hidden;
+    transition: transform 0.3s; 
 
+}
+
+.item:hover
+{
+    transform: scale(1.05);
 }
 
 
@@ -121,7 +140,7 @@ form ion-icon{
     font-weight: 400;
 }
 
-.view-button{
+/* .view-button{
     text-decoration:none;
     text-align: center;
     width: 130px;
@@ -131,7 +150,30 @@ form ion-icon{
     font-size: 1.4rem;
     margin-top:  20px;
     align-self: flex-start;
+} */
+
+
+.view-button {
+    text-decoration: none;
+    text-align: center;
+    width: 130px;
+    padding: 10px 0;
+    background-color: #404041;
+    color: white;
+    font-size: 1.4rem;
+    margin-top: 20px;
+    align-self: flex-start;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0); /* Add a subtle shadow by default */
 }
+
+.view-button:hover {
+    background-color: #2a2a2b;
+    color: #ffd700;
+    transform: scale(1.1);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 2), 0 16px 24px rgba(0, 0, 0, 2);
+}
+
 
 .item-data{
     color: aliceblue;
@@ -162,6 +204,15 @@ form ion-icon{
     }
 
     
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Move the item up during the animation */
+    }
 }
 /* 
 .button{
