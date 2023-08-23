@@ -46,4 +46,34 @@ function generateHTML(results) {
 
 }
 
-  
+
+
+
+
+// *******************************************THEME WORK ****************************************
+const $HTML = document.documentElement;
+const isDark = window.matchMedia("(preffers-color-schemes:dark)").matches;
+
+
+if(sessionStorage.getItem("theme"))
+{
+    $HTML.dataset.theme = sessionStorage.getItem("theme");
+}
+else
+{
+    $HTML.dataset.theme =isDark ? "dark" : "light";
+}
+
+var button  = document.getElementById("button");
+button.addEventListener("click", function()
+{
+    if ($HTML.dataset.theme === "dark") {
+        $HTML.dataset.theme = "light";
+        sessionStorage.setItem("theme", "light");
+        
+    } else {
+        $HTML.dataset.theme = "dark";
+        sessionStorage.setItem("theme", "dark");
+        console.log('fucking theme')
+    }
+});
